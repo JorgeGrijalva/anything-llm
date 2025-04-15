@@ -16,9 +16,9 @@ export default function Home() {
         <div className="w-full max-w-[1200px] flex flex-col gap-y-[24px] p-4 pt-16 md:p-12 md:pt-11">
           <Checklist />
           <QuickLinks />
-          <ExploreFeatures />
+          {/* <ExploreFeatures />
           <Updates />
-          <Resources />
+          <Resources /> */}
         </div>
       </div>
     </div>

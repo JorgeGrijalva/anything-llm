@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import usePfp from "../../hooks/usePfp";
 import UserDefaultPfp from "./user.svg";
-import WorkspaceDefaultPfp from "./workspace.svg";
+import logo from "../../media/logo/IAN-logo-light.svg";
 
 const UserIcon = memo(({ role }) => {
   const { pfp } = usePfp();
@@ -11,7 +11,7 @@ const UserIcon = memo(({ role }) => {
       {role === "user" && <RenderUserPfp pfp={pfp} />}
       {role !== "user" && (
         <img
-          src={WorkspaceDefaultPfp}
+          src={logo}
           alt="system profile picture"
           className="flex items-center justify-center rounded-full border-solid border border-white/40 light:border-theme-sidebar-border light:bg-theme-bg-chat-input"
         />

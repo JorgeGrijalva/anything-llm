@@ -15,7 +15,7 @@ import { useSidebarToggle, ToggleSidebarButton } from "./SidebarToggle";
 
 export default function Sidebar() {
   const { user } = useUser();
-  const { logo } = useLogo();
+  const { logo, loginLogo } = useLogo();
   const sidebarRef = useRef(null);
   const { showSidebar, setShowSidebar, canToggleSidebar } = useSidebarToggle();
   const {

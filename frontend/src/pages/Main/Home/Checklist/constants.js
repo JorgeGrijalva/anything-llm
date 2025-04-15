@@ -38,7 +38,7 @@ export const CHECKLIST_HIDDEN = "anythingllm_checklist_dismissed";
 export const CHECKLIST_ITEMS = [
   {
     id: "create_workspace",
-    title: "Create a workspace",
+    title: "checklist.steps.createWorkspace",
     description: "Create your first workspace to get started",
     action: "Create",
     handler: ({ showNewWsModal = noop }) => {
@@ -49,7 +49,7 @@ export const CHECKLIST_ITEMS = [
   },
   {
     id: "send_chat",
-    title: "Send a chat",
+    title: "checklist.steps.sendChat",
     description: "Start a conversation with your AI assistant",
     action: "Chat",
     handler: ({
@@ -74,7 +74,7 @@ export const CHECKLIST_ITEMS = [
   },
   {
     id: "embed_document",
-    title: "Embed a document",
+    title: "checklist.steps.embedDocument",
     description: "Add your first document to your workspace",
     action: "Embed",
     handler: ({
@@ -101,7 +101,7 @@ export const CHECKLIST_ITEMS = [
   },
   {
     id: "setup_system_prompt",
-    title: "Set up a system prompt",
+    title: "checklist.steps.setUpPrompt",
     description: "Configure your AI assistant's behavior",
     action: "Set Up",
     handler: ({
@@ -127,7 +127,7 @@ export const CHECKLIST_ITEMS = [
   },
   {
     id: "define_slash_command",
-    title: "Define a slash command",
+    title: "checklist.steps.defineSlashCommands",
     description: "Create custom commands for your assistant",
     action: "Define",
     handler: ({
@@ -150,13 +150,5 @@ export const CHECKLIST_ITEMS = [
       return true;
     },
     icon: SlashCommandIcon,
-  },
-  {
-    id: "visit_community",
-    title: "Visit Community Hub",
-    description: "Explore community resources and templates",
-    action: "Browse",
-    handler: () => window.open(paths.communityHub.website(), "_blank"),
-    icon: UsersThree,
-  },
+  }
 ];

@@ -2,8 +2,10 @@ import { useState } from "react";
 import { CHECKLIST_STORAGE_KEY, CHECKLIST_UPDATED_EVENT } from "../constants";
 import { Check } from "@phosphor-icons/react";
 import { safeJsonParse } from "@/utils/request";
+import { useTranslation } from "react-i18next";
 
 export function ChecklistItem({ id, title, action, onAction, icon: Icon }) {
+  const { t } = useTranslation();
   const [isCompleted, setIsCompleted] = useState(() => {
     const stored = window.localStorage.getItem(CHECKLIST_STORAGE_KEY);
     if (!stored) return false;
@@ -60,7 +62,7 @@ export function ChecklistItem({ id, title, action, onAction, icon: Icon }) {
               : "text-theme-checklist-item-text"
           }`}
         >
-          {title}
+          {t(title)}
         </h3>
       </div>
       {isCompleted ? (

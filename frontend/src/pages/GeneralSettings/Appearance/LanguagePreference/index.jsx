@@ -14,7 +14,7 @@ export default function LanguagePreference() {
         Display Language
       </h2>
       <p className="text-xs text-white/60">
-        Select the preferred language to render AnythingLLM's UI in, when
+        Select the preferred language to render IA-N&apos;s UI in, when
         applicable.
       </p>
       <div className="flex items-center gap-x-4">

@@ -8,11 +8,13 @@ import { Person } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
 import AccountModal from "../AccountModal";
 import { AUTH_TIMESTAMP, AUTH_TOKEN, AUTH_USER } from "@/utils/constants";
+import { useTranslation } from "react-i18next";
 
 export default function UserButton() {
   const mode = useLoginMode();
   const { user } = useUser();
   const menuRef = useRef();
+  const { t } = useTranslation();
   const buttonRef = useRef();
   const [showMenu, setShowMenu] = useState(false);
   const [showAccountSettings, setShowAccountSettings] = useState(false);
@@ -67,23 +69,23 @@ export default function UserButton() {
       {showMenu && (
         <div
           ref={menuRef}
-          className="w-fit rounded-lg absolute top-12 right-0 bg-theme-action-menu-bg p-2 flex items-center-justify-center"
+          className="w-fit rounded-lg absolute top-12 right-0 bg-theme-action-menu-bg p-2 flex items-center justify-center"
         >
           <div className="flex flex-col gap-y-2">
             {mode === "multi" && !!user && (
               <button
                 onClick={handleOpenAccountModal}
-                className="border-none text-white hover:bg-theme-action-menu-item-hover w-full text-left px-4 py-1.5 rounded-md"
+                className="border-none text-nowrap text-white hover:bg-theme-action-menu-item-hover w-full text-left px-4 py-1.5 rounded-md"
               >
-                Account
+                {t("user_dropdown_menu.account")}
               </button>
             )}
-            <a
+            {/* <a
               href={supportEmail}
               className="text-white hover:bg-theme-action-menu-item-hover w-full text-left px-4 py-1.5 rounded-md"
             >
-              Support
-            </a>
+              {t("user_dropdown_menu.support")}
+            </a> */}
             <button
               onClick={() => {
                 window.localStorage.removeItem(AUTH_USER);
@@ -92,9 +94,9 @@ export default function UserButton() {
                 window.location.replace(paths.home());
               }}
               type="button"
-              className="text-white hover:bg-theme-action-menu-item-hover w-full text-left px-4 py-1.5 rounded-md"
+              className="text-white text-nowrap hover:bg-theme-action-menu-item-hover w-full text-left px-4 py-1.5 rounded-md"
             >
-              Sign out
+              {t("user_dropdown_menu.logout")}
             </button>
           </div>
         </div>

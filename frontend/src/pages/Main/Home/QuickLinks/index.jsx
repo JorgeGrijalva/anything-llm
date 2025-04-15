@@ -8,8 +8,10 @@ import { useState } from "react";
 import { useNewWorkspaceModal } from "@/components/Modals/NewWorkspace";
 import NewWorkspaceModal from "@/components/Modals/NewWorkspace";
 import showToast from "@/utils/toast";
+import { useTranslation } from "react-i18next";
 
 export default function QuickLinks() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { showModal } = useManageWorkspaceModal();
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
@@ -57,7 +59,7 @@ export default function QuickLinks() {
   return (
     <div>
       <h1 className="text-theme-home-text uppercase text-sm font-semibold mb-4">
-        Quick Links
+        {t("quickLinks.title")}
       </h1>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <button
@@ -65,21 +67,21 @@ export default function QuickLinks() {
           className="h-[45px] text-sm font-semibold bg-theme-home-button-secondary rounded-lg text-theme-home-button-secondary-text flex items-center justify-center gap-x-2.5 transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
         >
           <ChatCenteredDots size={16} />
-          Send Chat
+          {t("quickLinks.sendChat")}
         </button>
         <button
           onClick={embedDocument}
           className="h-[45px] text-sm font-semibold bg-theme-home-button-secondary rounded-lg text-theme-home-button-secondary-text flex items-center justify-center gap-x-2.5 transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
         >
           <FileArrowDown size={16} />
-          Embed a Document
+          {t("quickLinks.embedDocument")}
         </button>
         <button
           onClick={createWorkspace}
           className="h-[45px] text-sm font-semibold bg-theme-home-button-secondary rounded-lg text-theme-home-button-secondary-text flex items-center justify-center gap-x-2.5 transition-all duration-200 hover:bg-theme-home-button-secondary-hover hover:text-theme-home-button-secondary-hover-text"
         >
           <Plus size={16} />
-          Create Workspace
+          {t("quickLinks.createWorkspace")}
         </button>
       </div>
 

@@ -3,7 +3,7 @@ import LGroupImg from "./l_group.png";
 import RGroupImg from "./r_group.png";
 import LGroupImgLight from "./l_group-light.png";
 import RGroupImgLight from "./r_group-light.png";
-import AnythingLLMLogo from "@/media/logo/anything-llm.png";
+import IANLogo from "@/media/logo/IAn-logo-dark.svg";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "react-i18next";
@@ -38,23 +38,30 @@ export default function OnboardingHome() {
           style={{ backgroundImage: `url(${srcSet.r})` }}
         ></div>
 
-        <div className="relative flex justify-center items-center m-auto">
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-theme-text-primary font-thin text-[24px]">
-              {t("onboarding.home.title")}
-            </p>
+        <div className="flex flex-col items-center justify-center max-w-md mx-auto py-12 px-4 space-y-8">
+          <p className="text-theme-text-primary font-thin text-2xl text-center">
+            {t("onboarding.home.title")}
+          </p>
+
+          <div className="flex flex-col items-center gap-3">
             <img
-              src={AnythingLLMLogo}
-              alt="AnythingLLM"
-              className="md:h-[50px] flex-shrink-0 max-w-[300px] light:invert"
+              src={IANLogo || "/placeholder.svg"}
+              alt="IAN"
+              className="h-[50px] max-w-[300px] light:invert"
             />
-            <button
-              onClick={() => navigate(paths.onboarding.llmPreference())}
-              className="border-[2px] border-theme-text-primary animate-pulse light:animate-none w-full md:max-w-[350px] md:min-w-[300px] text-center py-3 bg-theme-button-primary hover:bg-theme-bg-secondary text-theme-text-primary font-semibold text-sm my-10 rounded-md "
-            >
-              {t("onboarding.home.getStarted")}
-            </button>
+            <p className="text-theme-text-primary font-thin text-4xl">IA-N</p>
           </div>
+
+          <button
+            onClick={() => navigate(paths.onboarding.llmPreference())}
+            className="w-full md:max-w-[350px] py-3 rounded-md
+                  border-2 border-theme-text-primary
+                  bg-theme-button-primary hover:bg-theme-bg-secondary
+                  text-theme-text-primary font-semibold text-sm
+                  transition-colors duration-200 light:animate-none"
+          >
+            {t("onboarding.home.getStarted")}
+          </button>
         </div>
       </div>
     </>
